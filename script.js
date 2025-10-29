@@ -128,3 +128,22 @@ document.addEventListener("click", (e) => {
     navLinks.classList.remove("active");
   }
 });
+
+// Fade-in on scroll for paragraphs of about section
+const fadeElements = document.querySelectorAll(".fade-in");
+const fadeInObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+fadeElements.forEach((el) => fadeInObserver.observe(el));
