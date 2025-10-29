@@ -157,7 +157,7 @@ body {
   background: rgba(59, 130, 246, 0.04);
 }
 .menu-toggle {
-  display: none; 
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -243,7 +243,7 @@ body {
 .hero-photo-slider {
   position: relative;
   width: 45%;
-  height: 100vh;
+  height: 85vh;
   min-height: 400px;
   border-radius: 40px;
   overflow: hidden;
@@ -362,7 +362,7 @@ body {
   }
   .hero-photo-slider {
     width: 100%;
-    height: 95vh;
+    height: 70vh;
     border-radius: 30px;
   }
   .hero-inner {
@@ -376,7 +376,7 @@ body {
     padding: 2rem 1rem;
   }
   .hero-photo-slider {
-    height: 85vh;
+    height: 60vh;
   }
   .hero-title {
     font-size: 1.6rem;
@@ -457,8 +457,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 /* Sections */
 .section {
   padding: 4.25rem 0;
@@ -473,95 +471,182 @@ body {
   font-size: 1.03rem;
   margin-bottom: 1rem;
 }
-
-/* What I do */
+/* WHAT I DO */
+#whatido.section {
+  background: var(--bg-alt);
+  padding: 6rem 1.5rem;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+}
 .what-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 3.5rem;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 .group {
-  padding: 1rem 0;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.group:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
 }
 .group-header h3 {
-  margin-bottom: 0.35rem;
-  color: var(--text-dark);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#whatido h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
 }
 .group-sub {
   color: var(--muted-dark);
-  margin-bottom: 1rem;
-  font-size: 0.96rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
-
-/* stacks row */
+/* Tech Stack Row */
 .stack-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 .stack-card {
   display: flex;
-  gap: 0.9rem;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  min-width: 220px;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+.stack-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
 }
 .stack-logo svg {
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
 }
 .stack-meta h4 {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
 }
 .stack-meta p {
-  margin: 0;
-  font-size: 0.86rem;
   color: var(--muted-dark);
+  font-size: 0.93rem;
+  line-height: 1.5;
 }
-
-/* cards grid */
-.cards {
+/* Cards for detailed Area */
+.cards.grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 .card {
-  padding: 1.25rem;
-  border-radius: 12px;
-  transition: transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-}
-.card h4 {
-  margin-bottom: 0.35rem;
-  color: var(--text-dark);
-}
-.card p {
-  color: var(--muted-dark);
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-/* frontend vs prompt visual cues */
-.group-frontend .card {
-  background: var(--frontend-tint);
-  border: 1px solid rgba(37, 99, 235, 0.06);
-}
-.group-prompt .card {
-  background: var(--prompt-tint);
-  border: 1px solid rgba(6, 182, 212, 0.04);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
 }
-
+.card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.card p {
+  font-size: 0.94rem;
+  color: var(--muted-dark);
+  line-height: 1.5;
+}
+/* Responsiveness for what i do section */
+@media (max-width: 900px) {
+  #whatido.section {
+    padding: 4rem 1.25rem;
+  }
+  .group {
+    padding: 1.8rem;
+  }
+  .what-grid {
+    gap: 2.5rem;
+  }
+  .stack-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .stack-meta h4 {
+    margin-top: 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .group {
+    padding: 1.5rem;
+  }
+  .stack-row {
+    grid-template-columns: 1fr;
+  }
+  .cards.grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 380px) {
+  .stack-card {
+    padding: 1rem;
+  }
+  .stack-meta p {
+    font-size: 0.85rem;
+  }
+  .card h4 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 280px) {
+  #whatido.section {
+    padding: 3rem 0.8rem;
+  }
+  .stack-card,
+  .card {
+    padding: 0.9rem;
+  }
+  .stack-logo svg {
+    width: 32px;
+    height: 32px;
+  }
+  .group-header h3 {
+    font-size: 1.1rem;
+  }
+}
 /* Projects */
 .project-grid {
   display: grid;
