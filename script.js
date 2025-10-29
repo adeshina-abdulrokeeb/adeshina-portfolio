@@ -95,18 +95,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   });
 });
 
-// timed change of pictures
-const slides = document.querySelectorAll(".hero-photo-slider .slide");
-let current = 0;
-
-function showNextSlide() {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-}
-
-setInterval(showNextSlide, 4000);
-
 // nav slide-in behaviour
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
