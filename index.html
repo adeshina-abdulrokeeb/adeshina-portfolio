@@ -4,55 +4,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Adeshina Abdulrokeeb Eniola — Prompt Engineer</title>
+  <title>Adeshina Abdulrokeeb Eniola — Frontend Developer & Prompt Engineer</title>
 
   <meta name="description"
-    content="Adeshina Abdulrokeeb Eniola — Prompt engineer building high-impact prompt systems and AI workflows. DSN 3MTT Nigeria alumni." />
-  <meta property="og:title" content="Adeshina Abdulrokeeb Eniola — Prompt Engineer" />
-  <meta property="og:description"
-    content="Designing prompts and prompt systems that make AI think like experts. Explore projects, skills and contact." />
-  <meta property="og:type" content="website" />
-
+    content="Frontend developer & Prompt Engineer. Portfolio showcasing frontend projects, prompt engineering work (Ogun Digital Summit), and practical stacks." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="theme-dark">
-  <!-- Progress bar -->
   <div id="progress-bar" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-left">
-      <div class="brand">
-        <span class="brand-name">Adeshina Eniola</span>
-        <span class="brand-dot" aria-hidden="true">.</span>
-      </div>
+  <header class="navbar" role="banner">
+    <div class="brand" aria-hidden="false">
+      <span class="brand-name">Adeshina Eniola</span>
+      <span class="brand-dot">.</span>
     </div>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#specialties">Specialties</a>
+      <a href="#whatido">What I do</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="nav-right">
-      <!-- Theme toggle -->
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-        <!-- icon inserted by JS -->
-      </button>
+      <a class="resume-link" href="Adeshina_Abdulrokeeb_Eniola_Resume.pdf" target="_blank" rel="noopener">Download
+        CV</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-photo-slider">
+        <div class="slide active">
+          <img src="assets/adeshina1.jpg" alt="Adeshina Eniola" />
+        </div>
+        <div class="slide">
+          <img src="assets/adeshina2.jpg" alt="Adeshina Eniola" />
+        </div>
+        <div class="slide">
+          <img src="assets/adeshina3.jpg" alt="Adeshina Eniola" />
+        </div>
+        <div class="slide">
+          <img src="assets/adeshina4.jpg" alt="Adeshina Eniola" />
+        </div>
+      </div>
+      </div>
+
       <div class="container hero-inner">
-        <h1 class="hero-title">I design prompts and systems that make AI act like an expert teammate.</h1>
-        <p class="hero-sub">I create practical prompt architectures and workflows that turn fuzzy ideas into reliable,
-          repeatable outcomes — for content, products, and automation.</p>
-        <a class="btn btn-primary" href="#projects">See selected work</a>
+        <h1 class="hero-title">Frontend Developer <span class="divider">•</span> Prompt Engineer</h1>
+        <p class="hero-sub">I build performant, pixel-perfect web interfaces using core web tech, and design prompt
+          systems that make AI useful in production.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">See projects</a>
+          <a class="btn btn-ghost" href="#whatido">What I do</a>
+        </div>
       </div>
     </section>
 
@@ -61,51 +70,230 @@
       <div class="container">
         <h2>About</h2>
         <p class="lead">
-          I’m <strong>Adeshina Abdulrokeeb Eniola</strong>. I design prompt systems that bridge human intent and machine
-          reasoning — not tricks, but structured thinking. I teach models to follow a clear mental model so teams can
-          rely on AI outputs in production.
+          I’m <strong>Adeshina Abdulrokeeb Eniola</strong>. I craft frontends with a focus on clarity, performance, and
+          accessibility — and I pair that with applied prompt engineering to automate content, scale idea generation,
+          and improve product decisions. Education: Medicine & Surgery (UNILAG — in view), Frontend Development (Grazac
+          Academy), Generative AI (DSN 3MTT Nigeria).
         </p>
-
         <p>
-          I studied Generative AI at <strong>DSN 3MTT Nigeria</strong>, where I focused on applied prompting,
-          safety-minded design, and production-ready prompt flows. Since then I’ve built prompt frameworks for tutoring,
-          content automation, and persona-driven assistants used in prototypes and early products.
-        </p>
-
-        <p>
-          My approach is practical: reduce ambiguity, encode assumptions, and test outputs against measurable success
-          criteria. That’s how prompt engineering becomes a predictable product skill — not a guessing game.
+          I favour pragmatic, testable solutions: clear markup, small bundles, and prompt flows that include validation
+          steps. The result: reliable UIs and predictable AI outputs that teams can deploy.
         </p>
       </div>
     </section>
 
-    <!-- SPECIALTIES -->
-    <section id="specialties" class="section alt">
+    <!-- WHAT I DO -->
+    <section id="whatido" class="section alt">
       <div class="container">
         <h2>What I do</h2>
-        <div class="grid cards">
-          <article class="card">
-            <h3>Prompt Architecture</h3>
-            <p>Design reusable templates & system prompts so teams get consistent, reliable answers — across channels
-              and models.</p>
-          </article>
 
-          <article class="card">
-            <h3>Reasoning & Validation</h3>
-            <p>Layered prompts and verification steps that help models explain, justify and check their answers —
-              reducing hallucination risk.</p>
-          </article>
+        <div class="what-grid">
+          <!-- Frontend Group -->
+          <div class="group group-frontend" aria-labelledby="frontend-title">
+            <div class="group-header">
+              <h3 id="frontend-title">Frontend Development (priority)</h3>
+              <p class="group-sub">Production frontends built with clean HTML, precise CSS, and plain JavaScript —
+                focused on performance, accessibility and developer ergonomics.</p>
+            </div>
 
-          <article class="card">
-            <h3>Content & Automation</h3>
-            <p>Scalable flows for producing, editing and tailoring content—optimised for clarity, tone and outcome.</p>
-          </article>
+            <div class="stack-row stacks-front">
+              <!-- HTML -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- HTML5 SVG -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#E34F26" d="M1.5 0h21L19.1 21.8 12 24l-7.1-2.2L1.5 0z" />
+                    <path fill="#FFF"
+                      d="M17.3 7.1H6.8l.2 2.4h10.2l-.1 1.1-4.9 1.6-4.9-1.6-.3-3.6h8.5zM12 20.2l3.7-1 1-11.1h-4.7v1.6h2.6l-.6 6.4L12 18.3l-2.9-1 .6-6.4h1.5V9.2H7.4L7 12.3 12 14l5-1.7.1-1.7H12V9.2h6.1L17.3 7.1z" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>HTML5</h4>
+                  <p>Semantic markup, accessibility-first structure, and SEO-friendly content layers.</p>
+                </div>
+              </div>
 
-          <article class="card">
-            <h3>Tooling & Integration</h3>
-            <p>Glue prompts into product workflows: APIs, LangChain/agents, Notion/Zaps, and lightweight micro-services.
-            </p>
-          </article>
+              <!-- CSS -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- CSS3 SVG -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#1572B6" d="M1.5 0h21L19.1 21.8 12 24l-7.1-2.2L1.5 0z" />
+                    <path fill="#33A9DC" d="M12 22.1V6.3h6.9L17.6 20.2 12 22.1z" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>CSS3</h4>
+                  <p>Responsive layouts, modern CSS patterns, animations and robust visual systems.</p>
+                </div>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- JS SVG -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#F7DF1E" d="M0 0h24v24H0z" />
+                    <path
+                      d="M7.2 16.3c.6 1 1.4 1.8 3 1.8 1.6 0 2.6-.8 2.6-2.6V9.9h-2v4.2c0 .9-.4 1.3-1 1.3-.5 0-.9-.3-1.3-.7l-.9 1.6zM14.8 16.2c.7 1.1 1.6 1.8 3.2 1.8 1.5 0 2.4-.7 2.4-1.7 0-1.1-.8-1.5-2.4-2.2-1.1-.5-1.7-.9-1.7-1.6 0-.7.6-1.2 1.4-1.2.8 0 1.5.3 2 .9l.8-1c-.7-.6-1.6-1-2.8-1-1.8 0-2.8 1-2.8 2.4 0 1.1.6 1.7 2 2.3 1.1.5 1.6.9 1.6 1.7 0 .8-.8 1.4-2 1.4-1.4 0-2.3-.7-2.8-1.6l-.9 1.5z"
+                      fill="#000" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Vanilla JavaScript</h4>
+                  <p>Clean DOM manipulation, small bundles, and progressive enhancement for maintainability.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards grid">
+              <article class="card card-frontend">
+                <h4>Responsive Interfaces</h4>
+                <p>Mobile-first, accessible pages that adapt gracefully across devices and network conditions.</p>
+              </article>
+
+              <article class="card card-frontend">
+                <h4>Component Design</h4>
+                <p>Reusable, testable components and predictable contracts for fast maintenance.</p>
+              </article>
+
+              <article class="card card-frontend">
+                <h4>Performance</h4>
+                <p>Optimized asset delivery and resource-loading strategies for fast perceived performance.</p>
+              </article>
+
+              <article class="card card-frontend">
+                <h4>Interactive UI</h4>
+                <p>Meaningful micro-interactions, accessible state handling, and progressive enhancements.</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Prompt Group -->
+          <div class="group group-prompt" aria-labelledby="prompt-title">
+            <div class="group-header">
+              <h3 id="prompt-title">Prompt Engineering & AI (strategic)</h3>
+              <p class="group-sub">Designing prompt systems, validation layers and automation flows using in-vogue AI
+                tools.</p>
+            </div>
+
+            <div class="stack-row stacks-ai">
+              <!-- ChatGPT / OpenAI -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- OpenAI / ChatGPT simple SVG mark -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="#10A37F" />
+                    <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6z" fill="#fff" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>OpenAI / ChatGPT</h4>
+                  <p>Advanced prompt design, reasoning chains and production APIs for text generation and automation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Claude -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- Claude / Anthropic approx SVG -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="24" height="24" rx="5" fill="#00C4A7" />
+                    <path d="M6 6h12v12H6z" fill="#fff" opacity="0.06" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Anthropic / Claude</h4>
+                  <p>Long-form reasoning, synthesis across documents and safety-aware prompt flows.</p>
+                </div>
+              </div>
+
+              <!-- Gemini -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- Gemini / Google AI approx -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="#448AFF" />
+                    <path d="M8 12h8v1H8z" fill="#fff" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Google Gemini</h4>
+                  <p>Cross-platform LLM prompting and structured data extraction for product features.</p>
+                </div>
+              </div>
+
+              <!-- Midjourney -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <!-- Midjourney approximated -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="#FF6FD8" />
+                    <path d="M6 12c4-6 8 6 12 0" stroke="#fff" stroke-width="1.2" fill="none" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Midjourney</h4>
+                  <p>Visual ideation and image generation to support UI concepting and marketing creative.</p>
+                </div>
+              </div>
+
+              <!-- Notion AI -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="3" fill="#000" />
+                    <path d="M7 7v10h6V7H7z" fill="#fff" opacity="0.9" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Notion AI</h4>
+                  <p>Lightweight content automation and knowledge-work augmentation for teams and creators.</p>
+                </div>
+              </div>
+
+              <!-- Perplexity -->
+              <div class="stack-card">
+                <div class="stack-logo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="24" height="24" rx="4" fill="#7B61FF" />
+                    <path d="M6 12h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="stack-meta">
+                  <h4>Perplexity / Research AI</h4>
+                  <p>Fast retrieval and grounding for research-driven prompt outputs and fact-checking layers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards grid">
+              <article class="card card-prompt">
+                <h4>Prompt Architecture</h4>
+                <p>Reusable templates, system prompts and strategy patterns so teams get consistent, testable AI
+                  outputs.</p>
+              </article>
+
+              <article class="card card-prompt">
+                <h4>Validation & Reasoning</h4>
+                <p>Multi-step prompt chains and verification checks to reduce hallucination and increase output
+                  trustworthiness.</p>
+              </article>
+
+              <article class="card card-prompt">
+                <h4>Campaign & Copy Systems</h4>
+                <p>Idea engineering and persuasive copy systems — including the Ogun Digital Summit prompt framework
+                  used to improve engagement and registrations.</p>
+              </article>
+
+              <article class="card card-prompt">
+                <h4>Tooling & Integration</h4>
+                <p>Embedding prompts into product workflows (APIs, LangChain, Notion) to automate repetitive tasks and
+                  scale content safely.</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -113,36 +301,114 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
-        <h2>Selected projects</h2>
+        <h2>Projects</h2>
+        <p class="lead">Frontend projects first (live demos & repos). Prompt engineering projects follow with case notes
+          and examples.</p>
 
-        <div class="project-list">
-          <div class="project">
-            <h3>Code Tutor — adaptive learning prompts</h3>
-            <p><strong>Problem:</strong> learners get stuck on small misunderstandings that block progress.<br>
-              <strong>What I built:</strong> an adaptive prompt system that diagnoses common JS errors, returns
-              bite-sized hints, and escalates explanations only as needed.<br>
-              <strong>Outcome:</strong> more efficient learning sessions and faster problem resolution in prototype
-              tests.
-            </p>
-          </div>
+        <div class="project-grid">
+          <!-- Frontend projects: using repos you shared -->
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>Smart Finance Tracker</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">A responsive finance tracking app with categorization, summaries, and local
+              persistence. Built mobile-first and optimized for quick insights into spending patterns.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/smart-finance-tracker" class="link" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </article>
 
-          <div class="project">
-            <h3>LinkedIn Transformer — thread generator</h3>
-            <p><strong>Problem:</strong> long-form content rarely converts to short, engaging posts.<br>
-              <strong>What I built:</strong> a pipeline of prompts that extracts key ideas, crafts hooks, and iterates
-              style until a multi-tweet/thread-ready output is produced.<br>
-              <strong>Outcome:</strong> produced posts with clearer hooks and stronger engagement in trial runs.
-            </p>
-          </div>
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>Scientific Calculator</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">A browser-based scientific calculator supporting trig, exponents and memory
+              functions. Includes keyboard input and a clean responsive UI.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/scientific-calculator" class="link" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </article>
 
-          <div class="project">
-            <h3>Persona Framework — branded assistants</h3>
-            <p><strong>Problem:</strong> inconsistent tone across automated responses undermines brand trust.<br>
-              <strong>What I built:</strong> constrained persona specs + memory patterns that keep brand voice steady
-              across sessions.<br>
-              <strong>Outcome:</strong> prototypes that felt noticeably more human and dependable during user tests.
-            </p>
-          </div>
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>FindHouse (Property UI)</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">A polished property listing prototype with filters and detail views — designed
+              around a quick, user-centred property discovery flow.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/findhouse-prj" class="link" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>User Auth Dashboard System</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">A dashboard prototype showing authentication flows, role-aware content, and UI
+              patterns for admin/user surfaces.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/user-auth-dashboard-system" class="link" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>Mini Quiz Project</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">Interactive quiz app with scoring logic and feedback UI. Designed for quick testing
+              and learning flows.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/mini-quiz-project-1" class="link" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project project-frontend">
+            <div class="project-head">
+              <h3>Portable Arithmetic Calculator</h3>
+              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+            <p class="project-desc">Lightweight, mobile-first arithmetic calculator focusing on simplicity and
+              performance for on-the-go calculations.</p>
+            <div class="project-links">
+              <a href="https://github.com/adeshina-abdulrokeeb/portable-arithmetic-calculator-" class="link"
+                target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Prompt / AI Projects -->
+          <article class="project project-prompt">
+            <div class="project-head">
+              <h3>Ogun Digital Summit — Prompt Framework</h3>
+              <div class="badges"><span>Prompting</span><span>Campaigns</span><span>Copy</span></div>
+            </div>
+            <p class="project-desc">Built prompt flows to generate event ideas, persuasive copy and registration-driving
+              content. Resulted in measurable uplift in engagement and sign-ups across channels.</p>
+            <div class="project-links">
+              <a href="#" class="link" target="_blank" rel="noopener">Case Notes</a>
+            </div>
+          </article>
+
+          <article class="project project-prompt">
+            <div class="project-head">
+              <h3>LinkedIn Post Transformer</h3>
+              <div class="badges"><span>ChatGPT</span><span>Prompting</span></div>
+            </div>
+            <p class="project-desc">A prompt pipeline that converts long-form content into high-engagement,
+              platform-optimized posts and threads — controlling tone, hooks, and structure.</p>
+            <div class="project-links">
+              <a href="#" class="link" target="_blank" rel="noopener">Examples</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -150,8 +416,9 @@
     <!-- TOOLS -->
     <section id="tools" class="section alt">
       <div class="container">
-        <h2>Tools & stack</h2>
-        <p class="lead">ChatGPT • Claude • Gemini • OpenAI API • LangChain • Notion AI • Figma • GitHub • Vercel</p>
+        <h2>Tools & Stack</h2>
+        <p class="lead">Frontend: HTML • CSS • Vanilla JavaScript — Prompt engineering: OpenAI (ChatGPT), Anthropic
+          (Claude), Google (Gemini), Midjourney, Notion AI, Perplexity.</p>
       </div>
     </section>
 
@@ -159,51 +426,19 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Connect</h2>
-        <p class="lead">If you want a prompt system that produces consistent, measurable outcomes — let’s talk. I
-          consult, freelance, and build prototypes that increment product value quickly.</p>
+        <p class="lead">Interested in collaboration or hiring? I build production-ready frontends and AI systems — let’s
+          talk.</p>
 
         <div class="connect-grid">
-          <a class="connect connect-email" href="mailto:iamadeshinaeniola@gmail.com" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M2 6.5V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.5L12 12 2 6.5zM12 10L2 5h20l-10 5z" />
-            </svg>
-            Email
-          </a>
-
+          <a class="connect connect-email" href="mailto:iamadeshinaeniola@gmail.com" target="_blank"
+            rel="noopener">Email</a>
           <a class="connect connect-linkedin" href="https://www.linkedin.com/in/abdulrokeeb-adeshina-394169328"
-            target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M4.98 3.5A2.5 2.5 0 1 0 4.98 8.5 2.5 2.5 0 1 0 4.98 3.5zM3 9h4v12H3zM9 9h3.6v1.7h.1c.5-.9 1.8-1.7 3.7-1.7 3.9 0 4.6 2.6 4.6 6v7h-4v-6.2c0-1.5 0-3.5-2.1-3.5-2.1 0-2.3 1.6-2.3 3.4V21H9V9z" />
-            </svg>
-            LinkedIn
-          </a>
-
-          <a class="connect connect-x" href="https://x.com/MedicTerylene" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M22 3.2c-.6.3-1.2.5-1.9.6.7-.4 1.1-1 1.3-1.7-.7.4-1.5.7-2.3.9C18.5 2.4 17.6 2 16.6 2c-1.7 0-3.1 1.4-3.1 3.1 0 .2 0 .4.1.6C10.6 5.5 8.1 4.2 6.4 2c-.2.4-.3.9-.3 1.4 0 1.1.6 2.1 1.6 2.7-.6 0-1.2-.2-1.7-.5v.1c0 1.4 1 2.6 2.3 2.9-.4.1-.8.1-1.3.1-.3 0-.6 0-.9-.1.6 1.9 2.3 3.3 4.3 3.4C9.1 14 7.3 14.8 5.4 15.1c-.4.1-.8.1-1.2.1 1.5.9 3.4 1.4 5.3 1.4 6.3 0 9.8-5.2 9.8-9.7v-.4c.6-.4 1.2-1 1.7-1.6-.6.3-1.3.6-2 .8z" />
-            </svg>
-            X
-          </a>
-
-          <a class="connect connect-whatsapp" href="https://wa.me/2349049666975" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M16.7 13.6c-.3-.2-1.7-.9-2-.9s-.5 0-.8.2c-.3.1-.7.3-1 .5-.3.2-.7.3-.8.5-.2.2-.8.3-1.5-.6-.6-.8-1.2-1.1-1.3-1.2-.2-.2 0-.3.1-.5.1-.1.3-.4.5-.7.2-.2.2-.4.3-.7s.1-.5 0-.7c0-.2-.8-1.9-1.2-2.6-.3-.7-.7-.6-1-.6H8c-.3 0-.7 0-1 .1s-1 .4-1.5 1C4 6.9 3.1 9 3.1 11.3c0 2.3 1.3 4.9 2.6 6.6 1.3 1.7 3 3 5.5 3.9 2.4.9 3.6.5 3.9.5.2 0 .9-.3 1.7-.6.8-.4 2.2-1.2 2.5-2.4.3-1.2.3-2.3.2-2.5-.1-.3-.5-.5-.9-.8z" />
-            </svg>
-            WhatsApp
-          </a>
-
+            target="_blank" rel="noopener">LinkedIn</a>
+          <a class="connect connect-x" href="https://x.com/MedicTerylene" target="_blank" rel="noopener">X</a>
+          <a class="connect connect-whatsapp" href="https://wa.me/2349049666975" target="_blank"
+            rel="noopener">WhatsApp</a>
           <a class="connect connect-github" href="https://github.com/adeshina-abdulrokeeb" target="_blank"
-            rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M12 .5C5.7.5.9 5.3.9 11.7c0 4.6 3 8.6 7.1 10-.1-.7-.2-1.8.1-2.8.2-.6 1.1-4.2 1.1-4.2s-.4-.8-.4-1.9c0-1.8 1-3.1 2.2-3.1 1 0 1.6.8 1.6 1.7 0 1-.6 2.5-1 3.9-.3 1.2.6 2.2 1.8 2.2 2.2 0 3.9-2.6 3.9-6.4 0-2.6-1.8-4.5-4.9-4.5-3.4 0-5.5 2.6-5.5 5.3 0 1 .4 1.8 1 2.3.1.1.1.3.1.4 0 .3-.1 1-.1 1.2 0 .2.1.3.3.2C9.6 18.2 11 17 12.9 16.8c1.9-.2 3.4 0 4.4.5 1 .5 1.7 1.3 1.9 2.7.2 1.4 0 2.7 0 3.1 0 .4.3.7.6.5 3.4-1.8 5.7-5.6 5.7-9.9C23.1 5.3 18.3.5 12 .5z" />
-            </svg>
-            GitHub
-          </a>
+            rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -216,7 +451,6 @@
     </footer>
   </main>
 
-  <!-- Floating / utility buttons -->
   <button id="hireMeBtn" class="floating hire">Hire me</button>
   <button id="backToTop" class="floating top" aria-label="Back to top">↑</button>
 
