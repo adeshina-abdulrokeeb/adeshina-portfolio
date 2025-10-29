@@ -21,7 +21,14 @@
       <span class="brand-dot">.</span>
     </div>
 
-    <nav class="nav-links" aria-label="Main navigation">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+        class="menu-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <nav id="navLinks" class="nav-links" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#whatido">What I do</a>
       <a href="#projects">Projects</a>
@@ -51,7 +58,6 @@
         <div class="slide">
           <img src="assets/adeshina4.jpg" alt="Adeshina Eniola" />
         </div>
-      </div>
       </div>
 
       <div class="container hero-inner">
@@ -91,7 +97,7 @@
           <!-- Frontend Group -->
           <div class="group group-frontend" aria-labelledby="frontend-title">
             <div class="group-header">
-              <h3 id="frontend-title">Frontend Development (priority)</h3>
+              <h3 id="frontend-title">Frontend Development</h3>
               <p class="group-sub">Production frontends built with clean HTML, precise CSS, and plain JavaScript —
                 focused on performance, accessibility and developer ergonomics.</p>
             </div>
@@ -172,7 +178,7 @@
           <!-- Prompt Group -->
           <div class="group group-prompt" aria-labelledby="prompt-title">
             <div class="group-header">
-              <h3 id="prompt-title">Prompt Engineering & AI (strategic)</h3>
+              <h3 id="prompt-title">Prompt Engineering & AI</h3>
               <p class="group-sub">Designing prompt systems, validation layers and automation flows using in-vogue AI
                 tools.</p>
             </div>
