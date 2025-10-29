@@ -411,6 +411,42 @@ body {
     padding: 0.65rem 1rem;
   }
 }
+/* About section */
+.about {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0)
+  );
+  padding: 5rem 1.5rem;
+  color: var(--text-dark);
+}
+.about .section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
+}
+.about .lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: 750px;
+  margin-inline: auto;
+}
+.about p {
+  margin: 0 auto 1.2rem auto;
+  color: var(--muted-dark);
+  font-size: 1rem;
+}
+.about p.note {
+  margin-top: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+}
 
 /* Sections */
 .section {
