@@ -147,3 +147,6 @@ const fadeInObserver = new IntersectionObserver(
 );
 
 fadeElements.forEach((el) => fadeInObserver.observe(el));
+
+//auto-update year in the footer
+document.getElementById("year").textContent = new Date().getFullYear();
