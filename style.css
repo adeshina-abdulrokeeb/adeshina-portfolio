@@ -655,6 +655,11 @@ body {
   margin-bottom: 2.5rem;
   color: var(--accent);
 }
+#projects .lead {
+  text-align: center;
+  align-items: center;
+  font-weight: 600;
+}
 .project-category {
   font-size: 1.3rem;
   font-weight: 700;
