@@ -926,7 +926,7 @@ body {
   text-decoration: none;
   font-size: 1rem;
   transition: transform 0.25s ease, box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--text-light);
 }
@@ -991,8 +991,8 @@ body {
 .footer-brand h3 {
   font-size: 1.3rem;
   font-weight: 800;
-  /* color: var(--text-light); */
-  color: white;
+  color: var(--text-dark);
+  letter-spacing: -0.2px;
   margin-bottom: 0.2rem;
 }
 .footer-brand p {
@@ -1055,9 +1055,9 @@ body {
 .footer-copy {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   margin-top: 2rem;
-  padding-top: 1rem;
+  padding-top: 1.3rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted-light)
 }
 /* Responsiveness of footer section */
 @media (max-width: 700px) {
@@ -1072,7 +1072,7 @@ body {
     width: fit-content;
   }
 }
-/* Floating */
+/* Floating buttons */
 .floating {
   position: fixed;
   z-index: 1400;
@@ -1098,7 +1098,7 @@ body {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-dark);
 }
-/* Responsive */
+/* Responsiveness of floating buttons */
 @media (max-width: 1100px) {
   .what-grid {
     grid-template-columns: 1fr;
