@@ -129,25 +129,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Fade-in on scroll for paragraphs of about section
-const fadeElements = document.querySelectorAll(".fade-in");
-const fadeInObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
-
-fadeElements.forEach((el) => fadeInObserver.observe(el));
-
 //auto-update year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -217,3 +198,37 @@ const heroObserver = new IntersectionObserver(
 );
 
 heroObserver.observe(heroSection);
+
+// Animate about section on scroll
+const aboutSection = document.querySelector('#about');
+const aboutTitle = aboutSection.querySelector('.section-title');
+const aboutParagraphs = aboutSection.querySelectorAll('.fade-in');
+
+const aboutObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        aboutTitle.classList.add('show');
+
+        aboutParagraphs.forEach((p, i) => {
+          setTimeout(() => {
+            p.classList.add('show');
+          }, (i + 1) * 800);
+        });
+      } else {
+        aboutParagraphs.forEach((p, i) => {
+          setTimeout(() => {
+            p.classList.remove('show');
+          }, (aboutParagraphs.length - i) * 200);
+        });
+
+        setTimeout(() => {
+          aboutTitle.classList.remove('show');
+        }, aboutParagraphs.length * 250);
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+aboutObserver.observe(aboutSection);
