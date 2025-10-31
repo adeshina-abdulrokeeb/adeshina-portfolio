@@ -887,6 +887,16 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
 }
+/* Animation of projects section */
+.project-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.project-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Responsiveness for project section */
 @media (max-width: 600px) {
   .project-category {

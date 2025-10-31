@@ -274,3 +274,54 @@ const skillObserver = new IntersectionObserver(
 );
 
 skillObserver.observe(skillSection);
+
+// Animate projects section on scroll
+const projectsSection = document.querySelector('#projects');
+const projectTitle = projectsSection.querySelector('h2');
+const projectLead = projectsSection.querySelector('.lead');
+const frontendCat = projectsSection.querySelector('.frontend-cat');
+const promptCat = projectsSection.querySelector('.prompt-cat');
+const frontendProjects = projectsSection.querySelectorAll('.project-frontend');
+const promptProjects = projectsSection.querySelectorAll('.project-prompt');
+
+[
+  projectTitle,
+  projectLead,
+  frontendCat,
+  ...frontendProjects,
+  promptCat,
+  ...promptProjects,
+].forEach(el => el.classList.add('project-fade'));
+
+const projectObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        projectTitle.classList.add('show');
+        setTimeout(() => projectLead.classList.add('show'), 400);
+        setTimeout(() => frontendCat.classList.add('show'), 800);
+
+        frontendProjects.forEach((proj, i) => {
+          setTimeout(() => proj.classList.add('show'), 1200 + i * 250);
+        });
+
+        setTimeout(() => promptCat.classList.add('show'), 2800);
+        promptProjects.forEach((proj, i) => {
+          setTimeout(() => proj.classList.add('show'), 3200 + i * 250);
+        });
+      } else {
+        [
+          projectTitle,
+          projectLead,
+          frontendCat,
+          ...frontendProjects,
+          promptCat,
+          ...promptProjects,
+        ].forEach(el => el.classList.remove('show'));
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+projectObserver.observe(projectsSection);
