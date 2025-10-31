@@ -172,7 +172,7 @@ function animate() {
 }
 animate();
 
-/* Hover reactions for buttons, links, etc. */
+/* Hover reactions for buttons, links */
 document.querySelectorAll('a, button, .btn, [role="button"]').forEach(el => {
   el.addEventListener('mouseenter', () => cursorDot.classList.add('active'));
   el.addEventListener('mouseleave', () => cursorDot.classList.remove('active'));
@@ -182,4 +182,10 @@ document.querySelectorAll('a, button, .btn, [role="button"]').forEach(el => {
 document.querySelectorAll('input, textarea, select').forEach(el => {
   el.addEventListener('mouseenter', () => cursorDot.classList.add('dim'));
   el.addEventListener('mouseleave', () => cursorDot.classList.remove('dim'));
+});
+
+// slide-up animation for header and navs
+window.addEventListener('load', () => {
+  const header = document.querySelector('.navbar');
+  header.classList.add('visible');
 });

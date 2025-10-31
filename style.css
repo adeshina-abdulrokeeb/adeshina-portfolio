@@ -137,7 +137,6 @@ body {
   color: var(--accent);
   transform: translateY(-2px);
 }
-
 /* Theme toggle */
 .theme-toggle {
   width: 44px;
@@ -170,6 +169,49 @@ body {
 .menu-icon {
   width: 26px;
   height: 26px;
+}
+/* Slide-up animation for header */
+.navbar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Make visible on load */
+.navbar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Nav links animation */
+.nav-links a {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.navbar.visible .nav-links a {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger each link */
+.nav-links a:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.nav-links a:nth-child(2) {
+  transition-delay: 0.45s;
+}
+.nav-links a:nth-child(3) {
+  transition-delay: 0.65s;
+}
+.nav-links a:nth-child(4) {
+  transition-delay: 0.85s;
+}
+.navbar.visible .nav-right {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+}
+.nav-right {
+  opacity: 0;
+  transform: translateY(40px);
 }
 /* Responsiveness of header section */
 @media (max-width: 900px) {
