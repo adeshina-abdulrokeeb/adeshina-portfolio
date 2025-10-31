@@ -325,3 +325,39 @@ const projectObserver = new IntersectionObserver(
 );
 
 projectObserver.observe(projectsSection);
+
+// Animate tools section on scroll
+const toolsSection = document.querySelector("#tools");
+const frontendTools = toolsSection.querySelectorAll(".frontend-tools .tool-card");
+const aiTools = toolsSection.querySelectorAll(".ai-tools .tool-card");
+
+const toolsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        toolsSection.classList.add("show");
+
+        frontendTools.forEach((card, i) => {
+          setTimeout(() => {
+            card.classList.add("show");
+          }, i * 150);
+        });
+
+        aiTools.forEach((card, i) => {
+          setTimeout(() => {
+            card.classList.add("show");
+          }, (frontendTools.length * 150) + (i * 150) + 400);
+        });
+
+      } else {
+        toolsSection.classList.remove("show");
+        [...frontendTools, ...aiTools].forEach((card) =>
+          card.classList.remove("show")
+        );
+      }
+    });
+  },
+  { threshold: 0.25 }
+);
+
+toolsObserver.observe(toolsSection);
