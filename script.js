@@ -300,11 +300,10 @@ const projectObserver = new IntersectionObserver(
         projectTitle.classList.add('show');
         setTimeout(() => projectLead.classList.add('show'), 400);
         setTimeout(() => frontendCat.classList.add('show'), 800);
-
+        
         frontendProjects.forEach((proj, i) => {
           setTimeout(() => proj.classList.add('show'), 1200 + i * 250);
         });
-
         setTimeout(() => promptCat.classList.add('show'), 2800);
         promptProjects.forEach((proj, i) => {
           setTimeout(() => proj.classList.add('show'), 3200 + i * 250);
@@ -323,7 +322,6 @@ const projectObserver = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
 projectObserver.observe(projectsSection);
 
 // Animate tools section on scroll
@@ -342,13 +340,11 @@ const toolsObserver = new IntersectionObserver(
             card.classList.add("show");
           }, i * 150);
         });
-
         aiTools.forEach((card, i) => {
           setTimeout(() => {
             card.classList.add("show");
           }, (frontendTools.length * 150) + (i * 150) + 400);
         });
-
       } else {
         toolsSection.classList.remove("show");
         [...frontendTools, ...aiTools].forEach((card) =>
@@ -359,5 +355,34 @@ const toolsObserver = new IntersectionObserver(
   },
   { threshold: 0.25 }
 );
-
 toolsObserver.observe(toolsSection);
+
+// Animate contact section on scroll
+const contactSection = document.querySelector("#contact");
+const contactTitle = contactSection.querySelector(".section-title");
+const contactLead = contactSection.querySelector(".lead");
+const contactLinks = contactSection.querySelectorAll(".connect");
+
+const contactObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        contactTitle.classList.add("show");
+        setTimeout(() => {
+          contactLead.classList.add("show");
+        }, 400);
+        contactLinks.forEach((link, i) => {
+          setTimeout(() => {
+            link.classList.add("show");
+          }, 700 + i * 200);
+        });
+      } else {
+        contactTitle.classList.remove("show");
+        contactLead.classList.remove("show");
+        contactLinks.forEach((link) => link.classList.remove("show"));
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+contactObserver.observe(contactSection);
