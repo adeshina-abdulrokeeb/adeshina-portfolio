@@ -189,3 +189,31 @@ window.addEventListener('load', () => {
   const header = document.querySelector('.navbar');
   header.classList.add('visible');
 });
+
+// Animate hero section on scroll
+const heroSection = document.querySelector('.hero');
+const heroImage = document.querySelector('.hero-photo-slider');
+const heroInner = document.querySelector('.hero-inner');
+const heroCTAs = document.querySelector('.hero-ctas');
+
+// Intersection Observer to trigger animation on scroll
+const heroObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        heroImage.classList.add('animate');
+        heroInner.classList.add('animate');
+        heroCTAs.classList.add('animate');
+      } else {
+        heroImage.classList.remove('animate');
+        heroInner.classList.remove('animate');
+        heroCTAs.classList.remove('animate');
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+heroObserver.observe(heroSection);
