@@ -232,3 +232,45 @@ const aboutObserver = new IntersectionObserver(
 );
 
 aboutObserver.observe(aboutSection);
+
+// Animate skillset section on scroll
+const skillSection = document.querySelector('#whatido');
+const skillTitle = skillSection.querySelector('h2');
+const skillGroups = skillSection.querySelectorAll('.group');
+
+const skillObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        skillTitle.classList.add('show');
+
+        skillGroups.forEach((group, i) => {
+          setTimeout(() => {
+            group.classList.add('show');
+
+            const stacks = group.querySelectorAll('.stack-card');
+            stacks.forEach((card, j) => {
+              setTimeout(() => card.classList.add('show'), j * 200);
+            });
+            const skills = group.querySelectorAll('.skills span');
+            setTimeout(() => {
+              skills.forEach((skill, k) => {
+                setTimeout(() => skill.classList.add('show'), k * 100);
+              });
+            }, stacks.length * 200 + 400);
+          }, (i + 1) * 600);
+        });
+      } else {
+        skillTitle.classList.remove('show');
+        skillGroups.forEach((group) => {
+          group.classList.remove('show');
+          group.querySelectorAll('.stack-card').forEach((card) => card.classList.remove('show'));
+          group.querySelectorAll('.skills span').forEach((skill) => skill.classList.remove('show'));
+        });
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+skillObserver.observe(skillSection);
