@@ -1118,6 +1118,30 @@ body {
     right: 86px;
   }
 }
+/* Trailing circular dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent, #007bff);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, 
+              background-color 0.3s ease, opacity 0.2s ease;
+  z-index: 9999;
+}
+.cursor-dot.active {
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 2px solid var(--accent-hover, #00aaff);
+}
+.cursor-dot.dim {
+  opacity: 0.4;
+}
 /* LIGHT THEME */
 body.theme-light {
   background: var(--bg-light);

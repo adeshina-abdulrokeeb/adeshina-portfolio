@@ -150,3 +150,36 @@ fadeElements.forEach((el) => fadeInObserver.observe(el));
 
 //auto-update year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// trailing circular dot to cursor
+const cursorDot = document.querySelector('.cursor-dot');
+let mouseX = 0, mouseY = 0;
+let dotX = 0, dotY = 0;
+
+/* Capture mouse movement */
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+/* Smooth follow animation */
+function animate() {
+  dotX += (mouseX - dotX) * 0.65;
+  dotY += (mouseY - dotY) * 0.65;
+  cursorDot.style.left = `${dotX}px`;
+  cursorDot.style.top = `${dotY}px`;
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* Hover reactions for buttons, links, etc. */
+document.querySelectorAll('a, button, .btn, [role="button"]').forEach(el => {
+  el.addEventListener('mouseenter', () => cursorDot.classList.add('active'));
+  el.addEventListener('mouseleave', () => cursorDot.classList.remove('active'));
+});
+
+/* Dim effect for form elements */
+document.querySelectorAll('input, textarea, select').forEach(el => {
+  el.addEventListener('mouseenter', () => cursorDot.classList.add('dim'));
+  el.addEventListener('mouseleave', () => cursorDot.classList.remove('dim'));
+});
