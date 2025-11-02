@@ -145,8 +145,8 @@ window.addEventListener('mousemove', e => {
 
 /* Smooth follow animation */
 function animate() {
-  dotX += (mouseX - dotX) * 0.65;
-  dotY += (mouseY - dotY) * 0.65;
+  dotX += (mouseX - dotX) * 0.15;
+  dotY += (mouseY - dotY) * 0.15;
   cursorDot.style.left = `${dotX}px`;
   cursorDot.style.top = `${dotY}px`;
   requestAnimationFrame(animate);
@@ -300,7 +300,7 @@ const projectObserver = new IntersectionObserver(
         projectTitle.classList.add('show');
         setTimeout(() => projectLead.classList.add('show'), 400);
         setTimeout(() => frontendCat.classList.add('show'), 800);
-        
+
         frontendProjects.forEach((proj, i) => {
           setTimeout(() => proj.classList.add('show'), 1200 + i * 250);
         });
@@ -374,7 +374,7 @@ const contactObserver = new IntersectionObserver(
         contactLinks.forEach((link, i) => {
           setTimeout(() => {
             link.classList.add("show");
-          }, 700 + i * 200);
+          }, 700 + i * 400);
         });
       } else {
         contactTitle.classList.remove("show");
