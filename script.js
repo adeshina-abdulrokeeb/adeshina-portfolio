@@ -63,11 +63,23 @@ function updateProgress() {
 window.addEventListener('scroll', updateProgress);
 updateProgress();
 
-// back to top
-window.addEventListener('scroll', () => {
-  if (backToTop) backToTop.style.display = window.scrollY > 450 ? 'block' : 'none';
+// // back to top
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
 });
-if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 
 // hire button
 if (hireBtn) hireBtn.addEventListener('click', () => {
