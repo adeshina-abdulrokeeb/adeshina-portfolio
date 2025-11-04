@@ -240,18 +240,21 @@ const skillObserver = new IntersectionObserver(
 
 skillObserver.observe(skillSection);
 
-// Animate projects section on scroll
+// // Animate projects section on scroll
 const projectsSection = document.querySelector('#projects');
 const projectTitle = projectsSection.querySelector('h2');
 const projectLead = projectsSection.querySelector('.lead');
+const projectFilters = projectsSection.querySelector('.project-filters');
+const filterButtons = projectFilters.querySelectorAll('.filter-btn');
 const frontendCat = projectsSection.querySelector('.frontend-cat');
 const promptCat = projectsSection.querySelector('.prompt-cat');
 const frontendProjects = projectsSection.querySelectorAll('.project-frontend');
 const promptProjects = projectsSection.querySelectorAll('.project-prompt');
-
 [
   projectTitle,
   projectLead,
+  projectFilters,
+  ...filterButtons,
   frontendCat,
   ...frontendProjects,
   promptCat,
@@ -263,20 +266,25 @@ const projectObserver = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         projectTitle.classList.add('show');
-        setTimeout(() => projectLead.classList.add('show'), 400);
-        setTimeout(() => frontendCat.classList.add('show'), 800);
-
-        frontendProjects.forEach((proj, i) => {
-          setTimeout(() => proj.classList.add('show'), 1200 + i * 250);
+        setTimeout(() => projectLead.classList.add('show'), 300);
+        setTimeout(() => projectFilters.classList.add('show'), 600);
+        filterButtons.forEach((btn, i) => {
+          setTimeout(() => btn.classList.add('show'), 900 + i * 200);
         });
-        setTimeout(() => promptCat.classList.add('show'), 2800);
+        setTimeout(() => frontendCat.classList.add('show'), 1600);
+        frontendProjects.forEach((proj, i) => {
+          setTimeout(() => proj.classList.add('show'), 2000 + i * 200);
+        });
+        setTimeout(() => promptCat.classList.add('show'), 3000);
         promptProjects.forEach((proj, i) => {
-          setTimeout(() => proj.classList.add('show'), 3200 + i * 250);
+          setTimeout(() => proj.classList.add('show'), 3400 + i * 200);
         });
       } else {
         [
           projectTitle,
           projectLead,
+          projectFilters,
+          ...filterButtons,
           frontendCat,
           ...frontendProjects,
           promptCat,
@@ -288,7 +296,6 @@ const projectObserver = new IntersectionObserver(
   { threshold: 0.2 }
 );
 projectObserver.observe(projectsSection);
-
 // Animate tools section on scroll
 const toolsSection = document.querySelector("#tools");
 const frontendTools = toolsSection.querySelectorAll(".frontend-tools .tool-card");
@@ -361,7 +368,7 @@ function activateScrollspy() {
   let currentSection = "";
 
   allSections.forEach((section) => {
-    const sectionTop = section.offsetTop - 150; 
+    const sectionTop = section.offsetTop - 150;
     if (scrollY >= sectionTop) {
       currentSection = section.getAttribute("id");
     }
@@ -389,13 +396,13 @@ window.addEventListener("scroll", () => {
 });
 
 // Project filter functionality
-const filterButtons = document.querySelectorAll(".filter-btn");
+const filterButtonsA = document.querySelectorAll(".filter-btn");
 const projects = document.querySelectorAll(".project");
 
-filterButtons.forEach((btn) => {
+filterButtonsA.forEach((btn) => {
   btn.addEventListener("click", () => {
     // Remove "active" class from all buttons
-    filterButtons.forEach((b) => b.classList.remove("active"));
+    filterButtonsA.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
     const filter = btn.getAttribute("data-filter");
@@ -412,6 +419,27 @@ filterButtons.forEach((btn) => {
           project.style.display = "none";
         }
       }
+    });
+  });
+});
+
+// Arrow down svgs per section except the last section
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section:not(:last-of-type)");
+
+  sections.forEach((section) => {
+    const arrow = document.createElement("div");
+    arrow.classList.add("scroll-down-arrow");
+    arrow.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    `;
+    section.appendChild(arrow);
+
+    arrow.addEventListener("click", () => {
+      const next = section.nextElementSibling;
+      if (next) next.scrollIntoView({ behavior: "smooth" });
     });
   });
 });
