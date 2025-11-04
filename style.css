@@ -1483,6 +1483,145 @@ body {
   font-size: 0.9rem;
   color: var(--muted-light);
 }
+/* Subscribe Section in footer */
+.footer-subscribe {
+  margin-top: 2.2rem;
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+}
+.subscribe-text {
+  color: var(--muted-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.footer-subscribe form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.footer-subscribe input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  outline: none;
+  font-size: 0.95rem;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted-light);
+  transition: all 0.25s ease;
+}
+.footer-subscribe input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-subscribe input:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.footer-subscribe input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+.btn-subscribe {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.btn-subscribe:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+  background: #2563eb;
+}
+.btn-subscribe:active {
+  transform: scale(0.97);
+}
+
+/* Overlay Popup */
+.subscribe-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+.subscribe-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.overlay-content {
+  position: relative;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  padding: 2rem 2.5rem 3.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-width: 400px;
+}
+.subscribe-overlay.active .overlay-content {
+  transform: scale(1);
+}
+.overlay-content h3 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.overlay-content p {
+  color: var(--muted-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+/* Top-right 'X' Close */
+.overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--muted-light);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+.overlay-close:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Bottom-right Close Button */
+.overlay-btn-close {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.overlay-btn-close:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
 /* Responsiveness of footer section */
 @media (max-width: 700px) {
   .footer-inner {
@@ -1494,6 +1633,18 @@ body {
   }
   .btn-download {
     width: fit-content;
+  }
+  .footer-subscribe form {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .footer-subscribe input {
+    width: 100%;
+    max-width: 280px;
+  }
+  .overlay-btn-close {
+    position: static;
+    margin-top: 1rem;
   }
 }
 /* Floating buttons */

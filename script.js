@@ -94,9 +94,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//auto-update year in the footer
-document.getElementById("year").textContent = new Date().getFullYear();
-
 // trailing circular dot to cursor
 const cursorDot = document.querySelector('.cursor-dot');
 let mouseX = 0, mouseY = 0;
@@ -110,8 +107,8 @@ window.addEventListener('mousemove', e => {
 
 /* Smooth follow animation */
 function animate() {
-  dotX += (mouseX - dotX) * 0.15;
-  dotY += (mouseY - dotY) * 0.15;
+  dotX += (mouseX - dotX) * 0.45;
+  dotY += (mouseY - dotY) * 0.45;
   cursorDot.style.left = `${dotX}px`;
   cursorDot.style.top = `${dotY}px`;
   requestAnimationFrame(animate);
@@ -483,4 +480,45 @@ window.addEventListener("load", () => {
     preloader.classList.add("hidden");
     siteContent.classList.add("loaded");
   }, 2800);
+});
+
+// Footer year update
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Subscribe form logic
+const subscribeForm = document.getElementById("subscribeForm");
+const subscribeOverlay = document.getElementById("subscribeOverlay");
+const overlayCloseTop = document.getElementById("overlayCloseTop");
+const overlayCloseBottom = document.getElementById("overlayCloseBottom");
+
+if (subscribeForm) {
+  subscribeForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(subscribeForm);
+
+    try {
+      await fetch(subscribeForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      // Show overlay
+      subscribeOverlay.classList.add("active");
+      subscribeForm.reset();
+    } catch (error) {
+      alert("Oops! Something went wrong. Please try again.");
+    }
+  });
+}
+
+// Close overlay on click (both buttons)
+const closeOverlay = () => subscribeOverlay.classList.remove("active");
+if (overlayCloseTop) overlayCloseTop.addEventListener("click", closeOverlay);
+if (overlayCloseBottom) overlayCloseBottom.addEventListener("click", closeOverlay);
+
+// Close on outside click
+subscribeOverlay.addEventListener("click", (e) => {
+  if (e.target === subscribeOverlay) closeOverlay();
 });
