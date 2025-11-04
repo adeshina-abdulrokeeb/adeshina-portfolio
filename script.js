@@ -444,11 +444,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Preloader before main site shows
+// Preloader before main site displays
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   const siteContent = document.querySelector(".site-content");
+  const letters = document.querySelectorAll(".preloader-name .letter");
+  const dot = document.querySelector(".preloader-name .dot");
+  const letterSound = document.getElementById("letterSound");
+  const dotSound = document.getElementById("dotSound");
 
+  // Spark and sound for letters
+  letters.forEach(letter => {
+    letter.addEventListener("animationend", () => {
+      letter.classList.add("spark");
+      setTimeout(() => letter.classList.remove("spark"), 600);
+
+      // Play sound
+      if (letterSound) {
+        letterSound.currentTime = 0;
+        letterSound.play();
+      }
+    });
+  });
+
+  // Dot pulse sound and explode
+  dot.addEventListener("animationiteration", () => {
+    if (dotSound) {
+      dotSound.currentTime = 0;
+      dotSound.play();
+    }
+  });
+  dot.addEventListener("animationend", () => {
+    dot.classList.add("spark-explode");
+  });
+
+  // Hide preloader after 2.8s, show main site
   setTimeout(() => {
     preloader.classList.add("hidden");
     siteContent.classList.add("loaded");
