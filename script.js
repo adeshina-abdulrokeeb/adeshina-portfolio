@@ -47,13 +47,6 @@ if (hireBtn) hireBtn.addEventListener('click', () => {
   if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// keyboard accessibility for toggle
-if (themeToggle) {
-  themeToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); themeToggle.click(); }
-  });
-}
-
 // nav links reveal assist
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => {
