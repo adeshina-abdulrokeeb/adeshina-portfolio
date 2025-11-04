@@ -443,3 +443,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Preloader before main site shows
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  const siteContent = document.querySelector(".site-content");
+
+  setTimeout(() => {
+    preloader.classList.add("hidden");
+    siteContent.classList.add("loaded");
+  }, 2800);
+});
