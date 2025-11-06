@@ -486,16 +486,21 @@ window.addEventListener("load", () => {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Subscribe form logic
+// Subscribe form functionality
 const subscribeForm = document.getElementById("subscribeForm");
 const subscribeOverlay = document.getElementById("subscribeOverlay");
 const overlayCloseTop = document.getElementById("overlayCloseTop");
 const overlayCloseBottom = document.getElementById("overlayCloseBottom");
+const overlayContent = subscribeOverlay.querySelector(".overlay-content h3");
 
 if (subscribeForm) {
   subscribeForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(subscribeForm);
+    const fullName = formData.get("name")?.trim() || "";
+    const nameParts = fullName.split(" ");
+    // Pick second name if available, else first
+    const displayName = nameParts.length > 1 ? nameParts[1] : nameParts[0];
 
     try {
       await fetch(subscribeForm.action, {
@@ -503,8 +508,9 @@ if (subscribeForm) {
         body: formData,
         headers: { Accept: "application/json" },
       });
-
-      // Show overlay
+      if (overlayContent) {
+        overlayContent.innerHTML = `You're now on the list, <span style="color: var(--accent);">${displayName}</span>! 🎉`;
+      }
       subscribeOverlay.classList.add("active");
       subscribeForm.reset();
     } catch (error) {
@@ -512,13 +518,11 @@ if (subscribeForm) {
     }
   });
 }
-
-// Close overlay on click (both buttons)
+// Close overlay on buttons click
 const closeOverlay = () => subscribeOverlay.classList.remove("active");
 if (overlayCloseTop) overlayCloseTop.addEventListener("click", closeOverlay);
 if (overlayCloseBottom) overlayCloseBottom.addEventListener("click", closeOverlay);
-
-// Close on outside click
+// Close overlay on outside click
 subscribeOverlay.addEventListener("click", (e) => {
   if (e.target === subscribeOverlay) closeOverlay();
 });
